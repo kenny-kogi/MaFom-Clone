@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "./variable.scss";
+
+body {
+  font-family: $ff;
+  scroll-behavior: smooth;
+  background: $lightcontrast;
+}
+
+.navbar {
+  background-color: $lightcontrast !important;
+  height: 50px;
+  border-bottom: yellow 1px solid;
+}
+
+.container-fluid {
+  width: auto;
+}

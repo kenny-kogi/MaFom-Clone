@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  even_location: MyString
+  type: 
+  category: MyString
+  start_date: 2021-08-10
+  end_date: 2021-08-10
+  start_time: 2021-08-10 17:41:31
+  end_time: 2021-08-10 17:41:31
+  capacity: 1
+  price: 1
+  event_poster: MyString
+
+two:
+  name: MyString
+  description: MyText
+  even_location: MyString
+  type: 
+  category: MyString
+  start_date: 2021-08-10
+  end_date: 2021-08-10
+  start_time: 2021-08-10 17:41:31
+  end_time: 2021-08-10 17:41:31
+  capacity: 1
+  price: 1
+  event_poster: MyString
