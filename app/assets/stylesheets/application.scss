@@ -17,17 +17,39 @@
 @import "./variable.scss";
 
 body {
+  background-color: $lightcontrast;
   font-family: $ff;
   scroll-behavior: smooth;
-  background: $lightcontrast;
+}
+
+.bg-light {
+  background-color: white !important;
 }
 
 .navbar {
-  background-color: $lightcontrast !important;
-  height: 50px;
-  border-bottom: yellow 1px solid;
+  border-bottom: rgb(160, 153, 153) 1px solid;
+  box-shadow: rgba(129, 125, 125, 0.16) 0px 1px 4px;
 }
 
-.container-fluid {
-  width: auto;
+/* Side Nav*/
+
+aside {
+  width: 40%;
+}
+aside a {
+  color: $dark;
+}
+.title {
+  font-family: "Roboto Mono", monospace;
+  font-size: $lg-font;
+  font-weight: $fw-b;
+  color: $dark;
+}
+
+.btn-event {
+  background: $btncolor;
+  padding: 7px 15px;
+  border-radius: $br-primary-lg;
+  color: $lightcolor;
+  margin-left: 20px;
 }

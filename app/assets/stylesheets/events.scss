@@ -1,3 +1,148 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "./variable.scss";
+
+.main-cont {
+  position: fixed;
+}
+.contents {
+  gap: 20px;
+}
+.event-container {
+  gap: 20px;
+}
+.events {
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 5px;
+  max-width: 978px;
+}
+
+.event {
+  /* background: var(--lightcontrast); */
+  padding: $spacer;
+  border-radius: $br-primary;
+  box-shadow: $shadow;
+  background: $lightcolor;
+}
+.evn-img {
+  width: 630px;
+  /* height: 150px; */
+}
+.evn-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: $br-secondary;
+}
+.evn-text {
+  max-width: 668px;
+}
+.pill {
+  font-size: $sm-font;
+  background: $pinkish;
+  padding: 2px 7px;
+  border-radius: $br-primary-lg;
+  color: $lightcolor;
+}
+.evn-description-text {
+  font-size: $spacer;
+}
+.evn-text-right {
+  width: 40%;
+}
+.evn-price {
+  white-space: nowrap;
+  font-family: "Roboto Mono", monospace;
+  color: $pinkish;
+}
+
+.letf-nav-items .nav-item:hover {
+  background: $lg;
+  border-radius: $br-primary;
+}
+
+.popular-header {
+  font-size: $md-font;
+  /* text-align: center; */
+  margin-bottom: 10px;
+}
+
+.host-name {
+  font-size: $spacer;
+}
+.evn-popular .pop-name {
+  line-height: 80%;
+}
+.bg-c {
+  /* background: var(--lightcontrast); */
+  border-radius: $br-primary;
+  padding: 10px;
+  box-shadow: $shadow;
+  background: $lightcolor;
+}
+
+.ct-add {
+  width: 95%;
+  max-width: 786px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: $lightcolor;
+}
+.evn-add-form h3,
+.evns-container h3 {
+  font-size: $lg-font;
+  color: $dark;
+}
+.evn-add-form p {
+  font-size: $sm-font;
+}
+.evn-add-form label {
+  font-size: 0.8rem;
+}
+
+table {
+  background: $lightcolor;
+  padding: 5px;
+  border-radius: $br-primary;
+  box-shadow: $shadow;
+}
+.sm-form {
+  width: 568px;
+  background: $lightcolor;
+  padding: 20px;
+  border-radius: $br-primary;
+  box-shadow: $shadow;
+}
+.pl-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.an-evn-s {
+  display: grid;
+  place-items: center;
+}
+.an-evn img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: center;
+  border-radius: $br-secondary;
+}
+.an-evn {
+  background: $lightcolor;
+  max-width: 788px;
+  padding: 10px;
+}
+.an-evn .host {
+  box-shadow: none;
+}
+.an-evn-cpt {
+  border-right: $lg 2px solid;
+  border-left: $lg 2px solid;
+  padding: 0 5px;
+}

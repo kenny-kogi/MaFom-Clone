@@ -1,49 +1,107 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <aside class="left-nav col-2">
+      <%= render 'shared/side_nav' %>
+    </aside>
 
-<h1>Events</h1>
+    <section class="col-8 ">
+      <div class="main-cont">
+        <div class="container-fluid d-flex contents">
+          <div class="event_s my-2">
+            <div class="evn-container">
+              <div class="events">
+                <% @events.each do |event| %>
+                <div class="event my-3">
+                <%# link to show page %>
+                <div class="event-container d-flex">
+                  <div class="evn-img">
+                    <%= image_tag(event.event_poster) %>
+                  </div>
+                  <div class="evn-text d-flex">
+                    <div class="evn-text-left">
+                      <div class="evn-text-header d-flex">
+                      <p class="pill evn-location"><%= event.location%></p>
+                      <small><p class="mx-2 evn-date"> <%= event.start_date%>from<%= event.start_time%></p></small>
+                      </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Even location</th>
-      <th>Type</th>
-      <th>Category</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Capacity</th>
-      <th>Price</th>
-      <th>Event poster</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                      <div class="evn-description">
+                          <h3 class="evn-title title"><%= event.name %></h3>
+                          <p class="evn-description-text">
+                            <%= event.description %>
+                          </p>
+                      </div>
+                    </div>
+                    <div class="evn-text-right d-flex flex-column" style="gap: 120px;">
+                        <div class="evn-links d-flex justify-content-around">
+                          <% if event.price.empty? %>
+                          <div class="evn-price">
+                              <p><b>FREE</b></p>
+                          </div>
+                          <% else %>
+                          <div class="evn-price">
+                              <p><b><%= event.price %>Kshs</b></p>
+                          </div>
+                          <% end %>
+                        </div>
+                    </div>                    
+                  </div>
+                </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>  
+    </section>
+  </div>
+</div>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.description %></td>
-        <td><%= event.even_location %></td>
-        <td><%= event.type %></td>
-        <td><%= event.category %></td>
-        <td><%= event.start_date %></td>
-        <td><%= event.end_date %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= event.capacity %></td>
-        <td><%= event.price %></td>
-        <td><%= event.event_poster %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+ <%# <section class="main-cont">
+  <div class="container-fluid d-flex contents">
+<main>
+  <div class="event_s my-2">
+  <div class="evn-container">
+    <div class="events">
+<div class="event my-3">
+    <a href="">
+  <div class="event-container d-flex">
+      <div class="evn-img">
+          <img src="" alt="">
+      </div>  
+      <div class="evn-text d-flex">
+          <div class="evn-text-left">
+              <div class="evn-text-header d-flex">
+                  <p class="pill evn-location"></p>
+                  <small><p class="mx-2 evn-date"></p></small>
+              </div>
+              <div class="evn-description">
+                  <h3 class="evn-title title"></h3>
+                  <p class="evn-description-text">
 
-<br>
+                  </p>
+              </div>
+          </div>
+          <div class="evn-text-right d-flex flex-column" style="gap: 120px;">
+              <div class="evn-links d-flex justify-content-around">
+        
+                      <div class="evn-price">
+                          <p><b>FREE</b></p>
+                      </div>
 
-<%= link_to 'New Event', new_event_path %>
+                      <div class="evn-price">
+                          <p><b>Kshs</b></p>
+                      </div>
+              </div>
+          </div>
+        </div>
+          </div>
+            </a>    
+        </div>
+      </div>
+    </div>
+      </div>
+    </main>
+  </div>
+    </section> %>
