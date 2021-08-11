@@ -146,3 +146,12 @@ table {
   border-left: $lg 2px solid;
   padding: 0 5px;
 }
+
+.my-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.my-link:hover {
+  color: $dark;
+}

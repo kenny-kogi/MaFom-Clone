@@ -1,64 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Even location:</strong>
-  <%= @event.even_location %>
-</p>
-
-<p>
-  <strong>Type Event:</strong>
-  <%= @event.type_event %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @event.category %>
-</p>
-
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date %>
-</p>
-
-<p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
-
-<p>
-  <strong>Capacity:</strong>
-  <%= @event.capacity %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @event.price %>
-</p>
-
-<p>
-  <strong>Event poster:</strong>
-  <%= @event.event_poster %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<section class="an-evn-s">
+    <div class="container pl-center">
+        <div class="an-evn my-3">
+            <%= image_tag @event.poster %>
+            <div class="an-evn-dets">
+                <div class="an-evn-ttl my-2 d-flex" style="white-space: nowrap;">
+                    <p style="margin-right: 10px"><b><%= @event.name %></b></p>
+                    <p class="mx-1"><%= @event.even_location %></p>
+                    <p class="mx-1"><%= @event.type_event%> | </p>
+                    <p><%= @event.category%></p>
+                </div>
+                <hr>
+                <div class="an-evn-hst d-flex">
+                    <%# Follow code %>
+                    <div class="an-evn-cpt my-2 mx-3">
+                        <p style="font-size: .8rem;">
+                            <% if @event.capacity <= 0 %>
+                                <b> SOLD OUT!</b>
+                            <% else %>
+                                <b>
+                                    <%= @event.capacity %>
+                                </b> seats remaining
+                            <% end %>
+                        </p>
+                        <div class="an-evn-date my-2">
+                            <p style="font-size: .8rem; white-space: nowrap;" > <b><% @event.start_date %></b> from <b><%= @event.start_time %></b> to  <b><%= @event.end_date %> <% @event.end_time %></b> </p>
+                        </div>
+                    </div> 
+                <%# Buy Tickets Code %>
+                </div>
+                <hr>
+                <div class="an-evn-desc">
+                    <p><%= @event.description %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

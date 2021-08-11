@@ -4,7 +4,6 @@
     <aside class="left-nav col-2">
       <%= render 'shared/side_nav' %>
     </aside>
-
     <section class="col-8 ">
       <div class="main-cont">
         <div class="container-fluid d-flex contents">
@@ -13,15 +12,15 @@
               <div class="events">
                 <% @events.each do |event| %>
                 <div class="event my-3">
-                <%# link to show page %>
+                <%= link_to event_path(event.id), :class =>"my-link" do %>
                 <div class="event-container d-flex">
                   <div class="evn-img">
-                    <%= image_tag(event.event_poster) %>
+                    <%= image_tag event.poster %>
                   </div>
                   <div class="evn-text d-flex">
                     <div class="evn-text-left">
                       <div class="evn-text-header d-flex">
-                      <p class="pill evn-location"><%= event.location%></p>
+                      <p class="pill evn-location"><%= event.even_location %></p>
                       <small><p class="mx-2 evn-date"> <%= event.start_date%>from<%= event.start_time%></p></small>
                       </div>
 
@@ -34,7 +33,7 @@
                     </div>
                     <div class="evn-text-right d-flex flex-column" style="gap: 120px;">
                         <div class="evn-links d-flex justify-content-around">
-                          <% if event.price.empty? %>
+                          <% if event.price.nil? %>
                           <div class="evn-price">
                               <p><b>FREE</b></p>
                           </div>
@@ -47,6 +46,7 @@
                     </div>                    
                   </div>
                 </div>
+                <% end %>
                 </div>
                 <% end %>
               </div>
