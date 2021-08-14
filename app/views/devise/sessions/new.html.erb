@@ -1,0 +1,28 @@
+<section class="add-evn">
+    <div class="container pl-center">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {:class => "sm-form my-5"}) do |f| %>
+            <h3 class="text-center">Log In</h3>
+            <hr>
+            <div class="form-group">
+              <%= f.label :email, "Email address" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password, "Password" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+            <%= f.submit "Log in", class: "btn btn-primary btn-block"  %>
+            <div>
+              <%= render "devise/shared/links" %>
+            </div>
+        <% end%>
+  
+    </div>
+</section>

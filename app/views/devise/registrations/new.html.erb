@@ -1,0 +1,88 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+
+<section class="add-evn">
+    <div class="container pl-center">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <h3 class="text-center">Sign Up</h3>
+            <hr>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" name="fname" required value="<?php echo $fname ?>">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" name="lname" required value="<?php echo $lname ?>">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="uname">Userame</label>
+                <input type="text" class="form-control" name="uname" required value="<?php echo $uname ?>">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" required value="<?php echo $email ?>">
+                    <small><p><?php echo $errors['email'] ?></p></small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone</label>
+                    <input type="tel" class="form-control" name="phone" required value="<?php echo $phone ?>" >
+                    <small><p><?php echo $errors['phone'] ?></p></small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="lcation">Location</label>
+                <input type="text" class="form-control" name="location" required value="<?php echo $location ?>">
+            </div>
+
+            <div class="form-group form-row">
+                <div class="form-group col-md-6">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="form-control" name="pwd" required value="<?php echo $pwd ?>" >
+                    <small><p><?php echo $errors['pwd'] ?></p></small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="pwd">Confirm Password</label>
+                    <input type="password" class="form-control" name="cpwd" required value="<?php echo $cpwd ?>" >
+                    <small><p><?php echo $errors['pwd1'] ?></p></small>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <small><p>Already have an account? <a href="login.php" style="color: blue;">Log in here</a></p></small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <% end %>
+    </div>
+</section>
