@@ -12,8 +12,6 @@
             </div>
             <div class="form-group form-row">
                 <div class="form-group col-md-6">
-                    <label for="pwd">Password</label>
-                    <input type="password" class="form-control" name="pwd" required value="<?php echo $pwd ?>" >
                     <%= f.label :password %>
                     <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -21,8 +19,6 @@
                     <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Confirm Password</label>
-                    <input type="password" class="form-control" name="cpwd" required value="<?php echo $cpwd ?>" >
                     <%= f.label :password_confirmation %><br />
                     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
                 </div>
