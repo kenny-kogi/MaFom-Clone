@@ -70,6 +70,7 @@
                 <div class="form-group col-md-6">
                     <%= form.label :end_time %>
                     <%= form.time_select :end_time, class: "form-control" %>
+                    <%= form.number_field :user_id, id: :event_user_id, value: current_user.id ,class: "form-control", type: :hidden %>
                 </div>
             </div>  
             <hr>

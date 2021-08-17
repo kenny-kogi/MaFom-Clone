@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /events or /events.json
   def index
@@ -14,6 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @event = current_user.events.build
   end
 
   # GET /events/1/edit
@@ -22,7 +24,7 @@ class EventsController < ApplicationController
 
   # POST /events or /events.json
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -57,6 +59,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def correct_user
+    @event = current_user.events.find_by(id: params[:id])
+    redirect_to events_path, notice: "Not Authorized" if @event.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -65,6 +72,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :description, :even_location, :type_event, :category, :start_date, :end_date, :start_time, :end_time, :capacity, :price, :poster)
+      params.require(:event).permit(:name, :description, :even_location, :type_event, :category, :start_date, :end_date, :start_time, :end_time, :capacity, :price, :poster, :user_id)
     end
 end
