@@ -21,8 +21,7 @@
               <span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link active mx-2 btn btn-primary" %></span>
               <li><%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link active mx-2 btn btn-primary" %></li>
             <% else %>
-              <%= link_to "Log in",  user_session_path, class: "nav-link active mx-2 btn btn-primary" %>
-              
+              <%= link_to "Log in",  user_session_path, class: "nav-link active mx-2 btn btn-primary" %>     
             <% end %>          
           </li>
           <li class="nav-item">
